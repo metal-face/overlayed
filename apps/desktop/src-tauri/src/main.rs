@@ -47,6 +47,7 @@ fn main() {
     // TODO: this should work on windows
     .plugin(tauri_plugin_window_state::Builder::default().build())
     .plugin(tauri_plugin_websocket::init())
+    .plugin(tauri_plugin_context_menu::init())
     .manage(Clickthrough(AtomicBool::new(false)))
     .manage(Storage {
       theme: Mutex::new(ThemeType::Dark),
