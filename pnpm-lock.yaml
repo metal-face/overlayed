@@ -74,6 +74,9 @@ importers:
       react-router-dom:
         specifier: ^6.18.0
         version: 6.19.0(react-dom@18.2.0)(react@18.2.0)
+      tauri-plugin-context-menu:
+        specifier: ^0.5.0
+        version: 0.5.0
       tauri-plugin-websocket-api:
         specifier: github:tauri-apps/tauri-plugin-websocket#v1
         version: github.com/tauri-apps/tauri-plugin-websocket/b55e90e968b9020d1eb8de97c97655bfa002dfd8
@@ -7584,6 +7587,12 @@ packages:
       streamx: 2.15.5
     dev: false
     optional: true
+
+  /tauri-plugin-context-menu@0.5.0:
+    resolution: {integrity: sha512-CkAjSyxLx26hTXabG5Unbv+GWeH0XYNQB3zTqRxHpp257mWX8I4oASp8YF5T3zxFQEK++ZHqMZHpLrQ3usShRQ==}
+    dependencies:
+      '@tauri-apps/api': 1.5.1
+    dev: false
 
   /text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
