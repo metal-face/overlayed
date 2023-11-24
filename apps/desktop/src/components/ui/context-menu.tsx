@@ -1,27 +1,29 @@
 import { showMenu } from "tauri-plugin-context-menu";
 import { invoke } from "@tauri-apps/api/tauri";
+import { useState } from "react";
 
-invoke("get_clickthrough");
-
-// TODO: tunnle into rust, call hacksores method for current state of clickthrough
-
-const clickthroughEnabled = false;
+const [ctEnabled, setCtEnabled] = useState(false);
+invoke("get_clickthrough").then((clickthrough) => {
+  setCtEnabled(clickthrough as boolean);
+});
 
 showMenu({
   items: [
     {
       label: "Enable Clickthrough",
       event: () => {
-        // TODO: call hacksores method for enabling clickthrough
+        setCtEnabled(true);
+        invoke("toggle_clickthrough");
       },
-      disabled: clickthroughEnabled ? false : true,
+      disabled: ctEnabled ? false : true,
     },
     {
       label: "Disable Clickthrough",
       event: () => {
-        // TODO: call hacksores method for disabling clickthrough
+        setCtEnabled(false);
+        invoke("toggle_clickthrough");
       },
-      disabled: clickthroughEnabled ? true : false,
+      disabled: ctEnabled ? true : false,
     },
   ],
 });
