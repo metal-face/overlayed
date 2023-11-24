@@ -1,4 +1,7 @@
 import { showMenu } from "tauri-plugin-context-menu";
+import { invoke } from "@tauri-apps/api/tauri";
+
+invoke("get_clickthrough");
 
 // TODO: tunnle into rust, call hacksores method for current state of clickthrough
 
