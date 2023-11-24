@@ -11,7 +11,7 @@ export const useDisableWebFeatures = () => {
 
     // disable context menu
     document.addEventListener("contextmenu", e => {
-      e.preventDefault();
+      // e.preventDefault();
     });
   }, []);
 };
